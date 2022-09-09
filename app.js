@@ -1,10 +1,14 @@
+require('dotenv').config()
+
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
+//database conection
+require('./database')
 
+const indexRouter = require('./routes/index');
 const app = express();
 
 app.use(logger('dev'));

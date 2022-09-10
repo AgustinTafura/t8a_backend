@@ -1,6 +1,9 @@
+const eventService = require('../services/events')
+
 const getAll = async (req, res, next) => {
     try {
-        res.status(200).json('getAll');
+        const event = await eventService.getAll();
+        res.status(200).json(event);
     } catch (e) {
         next(e);
     }
@@ -8,8 +11,9 @@ const getAll = async (req, res, next) => {
 
 const create = async (req, res, next) => {
     try {
-        res.status(200).json('create');
-
+        const data = { ...req.body }
+        const event = await eventService.create(data);
+        res.status(200).json(event);
     } catch (e) {
         next(e);
     }
@@ -17,8 +21,9 @@ const create = async (req, res, next) => {
 
 const getById = async (req, res, next) => {
     try {
-        res.status(200).json('betById');
-
+        const { id } = req.params;
+        const event = await eventService.getById(id);
+        res.status(200).json(event);
     } catch (e) {
         next(e);
     }
@@ -26,8 +31,11 @@ const getById = async (req, res, next) => {
 
 const update = async (req, res, next) => {
     try {
-
-        res.status(200).json('update');
+        const data = { ...req.body}
+        const { id } = req.params;
+        await eventService.update( id , data );
+        const event = await eventService.getById( id );
+        res.status(200).json(event);
     } catch (e) {
         next(e);
     }
@@ -35,8 +43,11 @@ const update = async (req, res, next) => {
 
 const remove = async (req, res, next) => {
     try {
-
-        res.status(200).json('remove');
+        const { id } = req.params;
+        await eventService.remove(id);
+        res.status(200).json({
+            msg: 'Event removed succesfully'
+        });
     } catch (e) {
         next(e);
     }
@@ -48,5 +59,4 @@ module.exports = {
     create,
     remove,
     update
-  };
-  
+};

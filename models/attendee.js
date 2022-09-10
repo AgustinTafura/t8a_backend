@@ -8,7 +8,7 @@ const AttendeeSchema = new Schema({
         trim: true,
         lowercase: true,
     },
-    lastName: {
+    surname: {
         type: String, 
         required: true,
         trim: true,

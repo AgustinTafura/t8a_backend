@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "a6a7f5c3-2980-4ddc-9e78-e563c3f09886",
+		"name": "The8Agency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17880007"
+	},
+	"item": [
+		{
+			"name": "getAll - Events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/events",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create - Events",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"El reto de humanicar el CX financiero en 2021. La experiencia de un Unicorniode latam.\",\r\n    \"startDate\": \"December 16, 2022 17:00:00\",\r\n    \"attendees\": [],\r\n    \"duration\": \"2 hs\",\r\n    \"location\": \"a confirmar\"\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/events",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete - Events",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/events/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"events",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update - Events",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"duration\": \"3 hs\",\r\n    \"attendees\": \r\n        {\r\n        \"name\": \"su nombre\",\r\n        \"surname\": \"su apellido\",\r\n        \"email\": \"suemail@mail.com\",\r\n        \"phoneNumber\": \"2244433445\",\r\n        \"nationality\": \"Argentina\",\r\n        \"jobTitle\": \"developer\"\r\n        } \r\n\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/events/631ce2476b715286d3660fae",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"events",
+						"631ce2476b715286d3660fae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById - Events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/events/631b86b33354fec72aec13f4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"events",
+						"631b86b33354fec72aec13f4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://t8agency.herokuapp.com",
+			"type": "string"
+		}
+	]
+}

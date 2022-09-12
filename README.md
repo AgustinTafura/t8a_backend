@@ -49,3 +49,8 @@ npm start
 # check package.json for all scripts 
 ```
 
+## Testing
+
+```bash
+npm run test
+```

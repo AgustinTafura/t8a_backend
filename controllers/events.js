@@ -33,8 +33,7 @@ const update = async (req, res, next) => {
     try {
         const data = { ...req.body}
         const { id } = req.params;
-        await eventService.update( id , data );
-        const event = await eventService.getById( id );
+        const event = await eventService.update( id , data );
         res.status(200).json(event);
     } catch (e) {
         next(e);
